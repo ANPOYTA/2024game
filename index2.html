@@ -9,6 +9,53 @@
       <link rel="stylesheet" href="css/media.css">
       <link rel="shortcut icon" href="./favicon.ico">
       <title>2048</title>
+            <style>
+         /* Стилі для модального вікна */
+         .rules-popup {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 300px;
+            background: #fff;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+            z-index: 1000;
+            display: none;
+         }
+         .rules-popup h2 {
+            margin: 0 0 10px;
+            font-size: 20px;
+         }
+         .rules-popup p {
+            font-size: 16px;
+            margin: 0 0 20px;
+         }
+         .rules-popup button {
+            background-color: #f57c00;
+            color: #fff;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+         }
+         .rules-popup button:hover {
+            background-color: #e66a00;
+         }
+         /* Фон затемнення */
+         .popup-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+            display: none;
+         }
+      </style>
    </head>
    <body>
       <div class="intro-animation">
@@ -86,14 +133,12 @@
          </div>
 
          <!-- Модальне вікно -->
-         <div class="rules-modal" style="display: none;">
-            <div class="rules-content">
-               <h2>Правила гри</h2>
-               <p>З’єднуйте плитки з однаковими числами, щоб отримати плитку з числом 2048! Використовуйте стрілки або свайпи для переміщення плиток.</p>
-               <p>Гра 2048 була створена у березні 2014 року італійським розробником Габріеле Чируллі. Її оригінальна версія була написана за один уїк-енд як експеримент і виклик самому собі. Ідея гри надихалася іншими схожими іграми, такими як 1024 та популярна тоді Threes!.</p>
-               <button class="close-rules-btn">Закрити</button>
-            </div>
-         </div>
+         <div class="popup-overlay"></div>
+      <div class="rules-popup">
+         <h2>Правила гри</h2>
+         <p>З’єднуйте плитки з однаковими числами, щоб отримати плитку з числом 2048! Використовуйте стрілки або свайпи для переміщення плиток.</p>
+         <button class="close-popup-btn">Закрити</button>
+      </div>
 
          <div class="footer">
             <span>
@@ -114,17 +159,26 @@
       <script>
          document.addEventListener('DOMContentLoaded', () => {
             const rulesBtn = document.querySelector('.rules-btn');
-            const rulesModal = document.querySelector('.rules-modal');
-            const closeRulesBtn = document.querySelector('.close-rules-btn');
+            const rulesPopup = document.querySelector('.rules-popup');
+            const popupOverlay = document.querySelector('.popup-overlay');
+            const closePopupBtn = document.querySelector('.close-popup-btn');
 
-            // Показати модальне вікно
+            // Відкрити вікно
             rulesBtn.addEventListener('click', () => {
-               rulesModal.style.display = 'flex';
+               rulesPopup.style.display = 'block';
+               popupOverlay.style.display = 'block';
             });
 
-            // Закрити модальне вікно
-            closeRulesBtn.addEventListener('click', () => {
-               rulesModal.style.display = 'none';
+            // Закрити вікно
+            closePopupBtn.addEventListener('click', () => {
+               rulesPopup.style.display = 'none';
+               popupOverlay.style.display = 'none';
+            });
+
+            // Закриття при кліку на фон
+            popupOverlay.addEventListener('click', () => {
+               rulesPopup.style.display = 'none';
+               popupOverlay.style.display = 'none';
             });
          });
       </script>
