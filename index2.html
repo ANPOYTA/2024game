@@ -1,104 +1,131 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="css/keyframes.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/media.css">
-    <link rel="shortcut icon" href="./favicon.ico">
-    <title>2048</title>
-</head>
-
-<body>
-    <div class="intro-animation">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <link rel="stylesheet" href="css/keyframes.css">
+      <link rel="stylesheet" href="css/style.css">
+      <link rel="stylesheet" href="css/media.css">
+      <link rel="shortcut icon" href="./favicon.ico">
+      <title>2048</title>
+   </head>
+   <body>
+      <div class="intro-animation">
          <h1 class="intro-title">2048</h1>
       </div>
-      <div class="
-    <div class="container">
-        <div class="heading">
+      <div class="container">
+         <div class="heading">
             <h1 class="title">
-                <a href="">2048</a>
+               <a href="">2048</a>
             </h1>
             <div class="scores-container">
-                <div class="score-container">
-                    <p class="title">ОЧКИ</p>
-                    <P class="score">0</P>
-                    <div class="score-addition">
-                        +4
-                    </div>
-                </div>
-                <div class="best-container">
-                    <p class="title">НАЙКРАЩИЙ</p>
-                    <P class="score">66666</P>
-                </div>
+               <div class="score-container">
+                  <p class="title">ОЧКИ</p>
+                  <p class="score">0</p>
+                  <div class="score-addition">
+                     +4
+                  </div>
+               </div>
+               <div class="best-container">
+                  <p class="title">НАЙКРАЩИЙ</p>
+                  <p class="score">66666</p>
+               </div>
             </div>
-        </div>
-        <div class="game-intro">
+         </div>
+         <div class="game-intro">
             <a href="" class="restart-btn">Нова гра</a>
             <h2 class="subtitle">
-                Зіграй гру 2048 Онлайн!
+               Зіграй гру 2048 Онлайн!
             </h2>
             <p class="above-game">
-                З’єднуйте плитки з однаковими числами, щоб отримати плитку з числом <strong>2048</strong>! Використовуйте стрілки або свайпи для
-                  переміщення плиток.
+               З'єднуй цифри та дійди до <strong>2048</strong>!
             </p>
-        </div>
-        <div class="game-container">
+         </div>
+         <div class="game-container">
             <div class="grid-container">
-                <div class="grid-row">
-                    <div class="grid-cell"></div>
-                    <div class="grid-cell"></div>
-                    <div class="grid-cell"></div>
-                    <div class="grid-cell"></div>
-                </div>
-                <div class="grid-row">
-                    <div class="grid-cell"></div>
-                    <div class="grid-cell"></div>
-                    <div class="grid-cell"></div>
-                    <div class="grid-cell"></div>
-                </div>
-                <div class="grid-row">
-                    <div class="grid-cell"></div>
-                    <div class="grid-cell"></div>
-                    <div class="grid-cell"></div>
-                    <div class="grid-cell"></div>
-                </div>
-                <div class="grid-row">
-                    <div class="grid-cell"></div>
-                    <div class="grid-cell"></div>
-                    <div class="grid-cell"></div>
-                    <div class="grid-cell"></div>
-                </div>
+               <div class="grid-row">
+                  <div class="grid-cell"></div>
+                  <div class="grid-cell"></div>
+                  <div class="grid-cell"></div>
+                  <div class="grid-cell"></div>
+               </div>
+               <div class="grid-row">
+                  <div class="grid-cell"></div>
+                  <div class="grid-cell"></div>
+                  <div class="grid-cell"></div>
+                  <div class="grid-cell"></div>
+               </div>
+               <div class="grid-row">
+                  <div class="grid-cell"></div>
+                  <div class="grid-cell"></div>
+                  <div class="grid-cell"></div>
+                  <div class="grid-cell"></div>
+               </div>
+               <div class="grid-row">
+                  <div class="grid-cell"></div>
+                  <div class="grid-cell"></div>
+                  <div class="grid-cell"></div>
+                  <div class="grid-cell"></div>
+               </div>
             </div>
-            <div class="tile-container">
-
-            </div>
+            <div class="tile-container"></div>
             <div class="failure-container pop-container">
-                <p>:(</span></p>
-                <p>Ти програв!</p>
+               <p>:(</p>
+               <p>Ти програв!</p>
             </div>
             <div class="winning-container pop-container">
-                <p>:)</p>
-                <p>ПЕРЕМОГА!</p>
+               <p>:)</p>
+               <p>ПЕРЕМОГА!</p>
             </div>
-        </div>
-        <div class="footer">
-            <span>
-                ©Created by Anna Poyta PP-25
-                <a href="https://github.com/ANPOYTA">GitHub</a>
-            </span>
-        </div>
-    </div>
-    <script src="js/config.js"></script>
-    <script src="js/data.js"></script>
-    <script src="js/utils.js"></script>
-    <script src="js/event.js"></script>
-    <script src="js/view.js"></script>
-    <script src="js/game.js"></script>
-    <script src="js/main.js"></script>
-</body>
+         </div>
 
+         <!-- Кнопка для правил -->
+         <div class="rules-section">
+            <button class="rules-btn">Правила гри</button>
+         </div>
+
+         <!-- Модальне вікно -->
+         <div class="rules-modal" style="display: none;">
+            <div class="rules-content">
+               <h2>Правила гри</h2>
+               <p>З’єднуйте плитки з однаковими числами, щоб отримати плитку з числом 2048! Використовуйте стрілки або свайпи для переміщення плиток.</p>
+               <button class="close-rules-btn">Закрити</button>
+            </div>
+         </div>
+
+         <div class="footer">
+            <span>
+               ©Created by Anna Poyta PP-25
+               <a href="https://github.com/ANPOYTA">GitHub</a>
+            </span>
+         </div>
+      </div>
+      <script src="js/config.js"></script>
+      <script src="js/data.js"></script>
+      <script src="js/utils.js"></script>
+      <script src="js/event.js"></script>
+      <script src="js/view.js"></script>
+      <script src="js/game.js"></script>
+      <script src="js/main.js"></script>
+
+      <!-- Додавання JavaScript -->
+      <script>
+         document.addEventListener('DOMContentLoaded', () => {
+            const rulesBtn = document.querySelector('.rules-btn');
+            const rulesModal = document.querySelector('.rules-modal');
+            const closeRulesBtn = document.querySelector('.close-rules-btn');
+
+            // Показати модальне вікно
+            rulesBtn.addEventListener('click', () => {
+               rulesModal.style.display = 'flex';
+            });
+
+            // Закрити модальне вікно
+            closeRulesBtn.addEventListener('click', () => {
+               rulesModal.style.display = 'none';
+            });
+         });
+      </script>
+   </body>
 </html>
